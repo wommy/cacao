@@ -1,5 +1,106 @@
 ---
 layout: base
+header:
+  - 'open mon - sat'
+  - 'closed sunday'
+  - 'royal oak, mi'
+  - 'est. 2010'
+  - 'cacao tree cafe'
+  - '248.336.9043'
+  - 'order online at cacaotreecafe.com'
+  - 'please notify our staff of any food allergies or sensitivities'
+  - 'be aware that we produce our fiid in a facility that frequently uses tree nuts, coconuts, seeds, and some gluten'
 ---
 
-<h1>howdy</h1>
+<div class=" grid grid-cols-3 grid-rows-9 gap-4 | p-6 mx-auto bg-gray-100 | menu ">
+
+<header class="col-span-3">
+	<h1>cacao tree cafe</h1>
+</header>
+
+<section class=" col-span-1 row-span-4 | flex flex-col justify-between text-center">
+	<header>
+		<h2>salad</h2>
+	</header>
+
+	{%- for meal in salads %}
+	<div>
+		<header class="uppercase font-bold text-lg">{{ meal.salads }}</header>
+		<span>{{ meal.ingredients | join(', ') }}</span>
+	</div>
+	{%- endfor %}
+
+</section>
+
+<section class=" col-span-1 row-span-4 | flex flex-col justify-between text-center">
+	<header>
+		<h2>bowl</h2>
+	</header>
+	
+	{%- for meal in bowls %}
+	<div>
+		<header class="uppercase font-bold text-lg">{{ meal.powerbowls }}</header>
+		<span>{{ meal.ingredients | join(', ') }}</span>
+	</div>
+	{%- endfor %}
+</section>
+
+<section class=" col-span-1 row-span-6 | flex flex-col justify-between text-center">
+	<header>
+		<h2>sandwich</h2>
+	</header>
+
+	{%- for meal in wich %}
+	<div>
+		<header class="uppercase font-bold text-lg">{{ meal.wrapSandwich }}</header>
+		<span>{{ meal.ingredients | join(', ') }}</span>
+	</div>
+	{%- endfor %}
+</section>
+
+<section class=" col-span-2 row-span-2">
+	<header>
+		<h2>soup & dressing</h2>
+	</header>
+</section>
+
+<section class=" col-span-3 row-span-2 | ">
+	<header>
+		<h2>sides & extras</h2>
+	</header>
+</section>
+
+{#
+	{%- for i in [1,2,3] %}
+	<section>
+		{%- for meal in sanity %}
+		<div>
+			<header>{{ meal.salads }}</header>
+			<div>
+				<span>{{ meal.ingredients | join(', ') }}</span>
+			</div>
+		</div>
+		{%- endfor %}
+	</section>
+	{%- endfor %}
+#}
+
+<style>
+body {
+	background: silver;
+	padding: 1rem;
+}
+.menu {
+	width: 11in;
+	height: 17in;
+}
+.grid-rows-9 {
+	grid-template-rows: repeat(9, minmax(0, 1fr));
+}
+.row-span-8 {
+	grid-row: span 8 / span 8;
+}
+</style>
+
+</div>
+
