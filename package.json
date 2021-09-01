@@ -1,0 +1,16 @@
+{
+  "name": "cacao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wommy/cacao.git",
+  "author": "wommy <tom@technomad.media>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn eleventy",
+    "start": "yarn build --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@sanity/client": "^2.16.0"
+  }
+}
